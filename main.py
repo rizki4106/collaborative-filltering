@@ -33,7 +33,7 @@ def prediksi(user_id):
         # mengubah dictionary menjadi tabel ( pandas data frame )
         tabel = pd.DataFrame(transaksi)
 
-        row = os.getenv("KEY_VALUE")
+        row = os.getenv("ROW_VALUE")
         column = os.getenv("COLUMN_VALUE")
 
         # membuat pivot tabel
