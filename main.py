@@ -28,7 +28,7 @@ def prediksi(user_id):
     try:
         
         # ambil data transaksi
-        transaksi = data.get_transaction("SELECT orders.user_id, order_details.product_id FROM orders INNER JOIN order_details ON orders.id = order_details.order_id", connect)
+        transaksi = data.get_transaction(os.getenv("QUERY"), connect)
 
         # mengubah dictionary menjadi tabel ( pandas data frame )
         tabel = pd.DataFrame(transaksi)
@@ -41,7 +41,7 @@ def prediksi(user_id):
 
         # prediksi konten collaborative filltering
         rekomendasi = collaborative(product_id=pivot.columns.tolist(),
-                                    user_id=int(user_id),
+                                    user_id=user_id,
                                     pivot_table=pivot)
         return {
             "data": rekomendasi,
