@@ -16,6 +16,7 @@ services:
       - DB_NAME=${DB_NAME}
       - ROW_KEY=${ROW_KEY}
       - COLUMN_KEY=${COLUMN_KEY}
+      - QUERY=${QUERY}
     external_links:
       - ${DB_HOST}
 
