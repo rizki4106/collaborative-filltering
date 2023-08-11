@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+  aloha-collaborative:
+    container_name: ${APP_NAME}
+    build:
+      context: .
+    restart: always
+    ports:
+      - ${APP_PORT}:${APP_PORT}
+    environment:
+      - DB_HOST=${DB_HOST}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_PORT=${DB_PORT}
+      - DB_NAME=${DB_NAME}
+    external_links:
+      - ${DB_HOST}
+
+networks:
+  default:
+    external:
+      name: ${DOCKER_NETWORK}
