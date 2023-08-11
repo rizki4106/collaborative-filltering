@@ -15,7 +15,7 @@ services:
       - DB_PORT=${DB_PORT}
       - DB_NAME=${DB_NAME}
       - ROW_VALUE=${ROW_VALUE}
-      - COLUMN_KEY=${COLUMN_VALUE}
+      - COLUMN_VALUE=${COLUMN_VALUE}
       - QUERY=${QUERY}
     external_links:
       - ${DB_HOST}
