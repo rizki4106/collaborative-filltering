@@ -25,6 +25,12 @@ COLUMN_VALUE=
 DOCKER_NETWORK=
 ```
 
+development
 ```bash
-docker-compose up --build -d --env-file .env
+pip3 install requirements.txt && uvicorn main:app --reload
+```
+
+Production
+```bash
+docker-compose up --build -d
 ```
