@@ -44,7 +44,7 @@ def prediksi(user_id):
                                     user_id=user_id,
                                     pivot_table=pivot)
         return {
-            "data": rekomendasi,
+            "data": rekomendasi[:5],
             "pesan": "berhasil mendapatkan rekomendasi"
         }
     

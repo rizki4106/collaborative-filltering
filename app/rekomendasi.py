@@ -50,7 +50,7 @@ def collaborative(
     kesamaan_terpilih = list(set(kesamaan_terpilih))
 
     # ambil data yang mirip dengan user x
-    data_mirip = np.array([pivot_table.loc[i].values.tolist() for i in user_mirip])
+    data_mirip = np.array([pivot_table.iloc[user.index(i), :].values.tolist() for i in user_mirip])
 
     produk = []
 
